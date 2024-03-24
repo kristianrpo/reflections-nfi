@@ -1,0 +1,23 @@
+[MASTER]
+extension-pkg-whitelist=django
+fail-under=8
+load-plugins=pylint.extensions.bad_builtin
+
+[REPORTS]
+output-format = colorized
+
+[REFACTORING]
+max-line-length = 120
+
+[LOGGING]
+enable = logging-format-interpolation
+
+[VARIABLES]
+enable = unused-variable
+disable = undefined-variable
+
+[BAD-BUILTIN]
+bad-functions=print
+
+[MESSAGES]
+disable = missing-module-docstring,trailing-whitespace,no-name-in-module

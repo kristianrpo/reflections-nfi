@@ -1,0 +1,73 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colombia en el ambito internaiconal</title>
+    <link href="{%static 'CSS/foro/home.css'%}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-info">
+        <div class="card">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="card-inner">
+            <h1>Colombia en el ambito internacional</h1>
+          </div>
+        </div>
+        <div class="container-relevant-info">
+          <div class="left-container">
+            <div class="e-card playing">
+              <div class="image"></div>
+
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
+
+              <div class="infotop">
+                <h2>
+                  Espacio de reflexiones para colombia el ambito internacional
+                </h2>
+                <br />
+                <div class="name">Kristian Restrepo Osorio</div>
+              </div>
+            </div>
+            <button>
+              <a href="{% url 'foro:createComment'%}" class="btn2"
+                ><span class="spn2">CREAR COMENTARIO</span></a
+              >
+            </button>
+          </div>
+          <div class="right-container">
+            <div class="title-reflection"><h2>REFLEXIONES</h2></div>
+            <form method="GET">
+              <div class="input-group">
+                <input
+                  required=""
+                  type="text"
+                  name="text"
+                  autocomplete="off"
+                  class="input"
+                />
+                <label class="user-label">Nombre de estudiante</label>
+              </div>
+            </form>
+            <div class="card-comment-container">
+              {% for element in list_elements %}
+              <div class="card-comment">
+                <div class="body">
+                  <h2>{{element.title_post}}</h2>
+                  <span class="username">De: {{element.name_user}}</span>
+                  <br />
+                  <p class="text">{{element.description_post}}</p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

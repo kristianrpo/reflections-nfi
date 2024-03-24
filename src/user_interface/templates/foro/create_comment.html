@@ -1,0 +1,37 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear comentario</title>
+    <link href="{%static 'CSS/foro/create_comment.css'%}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <form class="form" method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="email">Nombre</label>
+            <input required="" name="name_user" id="name_user" type="text" />
+          </div>
+          <div class="form-group">
+            <label for="">Título</label>
+            <input required="" name="title_post" id="title_post" type="text" />
+          </div>
+          <div class="form-group">
+            <label for="textarea">Descripción</label>
+            <textarea
+              required=""
+              cols="50"
+              rows="10"
+              id="description_post"
+              name="description_post"
+            ></textarea>
+          </div>
+          <button type="submit" class="form-submit-btn">Crear</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
